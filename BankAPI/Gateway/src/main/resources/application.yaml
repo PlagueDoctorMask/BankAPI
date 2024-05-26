@@ -1,0 +1,19 @@
+server:
+  port: 8765
+
+
+spring:
+  application:
+    name: Gateway
+  cloud:
+    gateway:
+      routes:
+        - id: Client
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/user/**
+        - id: ServiceAPI
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/service/**
+

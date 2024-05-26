@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: Client
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/bankapidb
+    username: user
+    password: 123
+    driverClassName: org.postgresql.Driver
+
+security.enable-csrf: false
+
+logging:
+  level:
+    org.springframework.security.web: INFO
+
